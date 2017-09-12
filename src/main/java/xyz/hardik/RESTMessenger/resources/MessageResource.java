@@ -10,23 +10,34 @@ import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 import xyz.hardik.RESTMessenger.model.*;
 import xyz.hardik.RESTMessenger.service.MessageService;
 
 
-@Path("/messages")
+@Path("messages")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class MessageResource {
 
 	MessageService messageService = new MessageService();
 	
+
 	@GET
-	public List<Message> getMessages() {		
-		return (new MessageService().getAllMessages());
+	public List<Message> getMessages(	/*@QueryParam("year") int year,
+										@QueryParam("start") int start,
+										@QueryParam("size") int size*/) {
+		/*if(year>0) {
+			return messageService.getAllMessagesForYear(year);
+		}
+		if(size >= 0 && start >= 0) {
+			return messageService.getAllMessagesPaginated(start, size);
+		}*/
+		return messageService.getAllMessages();
 	}
+	
 	
 	
 	@Path("/{messageId}")
@@ -34,6 +45,7 @@ public class MessageResource {
 	public Message getMessage(@PathParam("messageId") long messageId) {
 		return messageService.getMessage(messageId);
 	}
+	
 	
 	
 	@POST

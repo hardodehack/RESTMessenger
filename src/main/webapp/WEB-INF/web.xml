@@ -7,12 +7,12 @@
     <servlet-class>com.sun.jersey.spi.container.servlet.ServletContainer</servlet-class>
     <init-param>
       <param-name>com.sun.jersey.config.property.packages</param-name>
-      <param-value>xyz.hardik.MessengeR</param-value>
+      <param-value>xyz.hardik.RESTMessenger</param-value>
     </init-param>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>Jersey Web Application</servlet-name>
-    <url-pattern>/REST/*</url-pattern>
+    <url-pattern>/rest/*</url-pattern>
   </servlet-mapping>
 </web-app>
