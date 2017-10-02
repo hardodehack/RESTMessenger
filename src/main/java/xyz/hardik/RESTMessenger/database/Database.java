@@ -7,7 +7,7 @@ import xyz.hardik.RESTMessenger.model.Message;
 import xyz.hardik.RESTMessenger.model.Profile;
 
 /*
- * This is Database Stub b'coz we don't want to use Databses Here.
+ * This is Database Stub b'coz we don't want to use R-Databses Here.
  * The Data will be stored here unless and untill server not restarted.
  * This is Not Thread Safe.
  * 
